@@ -1,0 +1,90 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: dzedu-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-postgres}
+      POSTGRES_DB: dzedu
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U postgres']
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.web
+    container_name: dzedu-web
+    restart: unless-stopped
+    ports:
+      - '3000:3000'
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: ${DATABASE_URL}
+      AUTH_SECRET: ${AUTH_SECRET}
+      AUTH_URL: ${APP_URL:-http://localhost:3000}/api/auth
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID}
+      GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET}
+      OTP_SECRET: ${OTP_SECRET}
+      SMTP_HOST: ${SMTP_HOST}
+      SMTP_PORT: ${SMTP_PORT}
+      SMTP_SECURE: ${SMTP_SECURE:-false}
+      SMTP_USER: ${SMTP_USER}
+      SMTP_PASS: ${SMTP_PASS}
+      EMAIL_FROM: ${EMAIL_FROM}
+      CHARGILY_API_KEY: ${CHARGILY_API_KEY}
+      CHARGILY_WEBHOOK_SECRET: ${CHARGILY_WEBHOOK_SECRET}
+      CHARGILY_MODE: ${CHARGILY_MODE:-EDU}
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY}
+      STRIPE_WEBHOOK_SECRET: ${STRIPE_WEBHOOK_SECRET}
+      CDN_URL: ${CDN_URL}
+      CDN_API_KEY: ${CDN_API_KEY}
+      CDN_TOKEN_EXPIRY_SECONDS: ${CDN_TOKEN_EXPIRY_SECONDS:-3600}
+      CORS_ORIGIN: ${APP_URL:-http://localhost:3000}
+      SENTRY_DSN: ${SENTRY_DSN}
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    container_name: dzedu-api
+    restart: unless-stopped
+    ports:
+      - '4000:4000'
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: ${DATABASE_URL}
+      AUTH_SECRET: ${AUTH_SECRET}
+      JWT_SECRET: ${AUTH_SECRET}
+      CORS_ORIGIN: ${APP_URL:-http://localhost:3000}
+      SMTP_HOST: ${SMTP_HOST}
+      SMTP_PORT: ${SMTP_PORT}
+      SMTP_SECURE: ${SMTP_SECURE:-false}
+      SMTP_USER: ${SMTP_USER}
+      SMTP_PASS: ${SMTP_PASS}
+      EMAIL_FROM: ${EMAIL_FROM}
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY}
+      STRIPE_WEBHOOK_SECRET: ${STRIPE_WEBHOOK_SECRET}
+      CHARGILY_API_KEY: ${CHARGILY_API_KEY}
+      CHARGILY_WEBHOOK_SECRET: ${CHARGILY_WEBHOOK_SECRET}
+      CDN_URL: ${CDN_URL}
+      CDN_API_KEY: ${CDN_API_KEY}
+      SENTRY_DSN: ${SENTRY_DSN}
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  postgres_data:

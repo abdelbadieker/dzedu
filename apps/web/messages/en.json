@@ -1,0 +1,93 @@
+{
+  "Common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "create": "Create",
+    "search": "Search",
+    "noResults": "No results",
+    "back": "Back",
+    "next": "Next",
+    "submit": "Submit",
+    "confirm": "Confirm",
+    "close": "Close"
+  },
+  "Auth": {
+    "login": "Sign In",
+    "register": "Sign Up",
+    "logout": "Sign Out",
+    "email": "Email address",
+    "password": "Password",
+    "confirmPassword": "Confirm password",
+    "forgotPassword": "Forgot password?",
+    "loginGoogle": "Continue with Google",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?",
+    "verifyOtp": "OTP Verification",
+    "otpSent": "A verification code has been sent to {email}"
+  },
+  "Dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome back, {name}",
+    "myCourses": "My Courses",
+    "myProgress": "My Progress",
+    "settings": "Settings",
+    "profile": "Profile",
+    "quickActions": "Quick Actions",
+    "recentActivity": "Recent Activity",
+    "totalStudents": "Total Students",
+    "totalCourses": "Total Courses",
+    "totalRevenue": "Total Revenue",
+    "activeSubscriptions": "Active Subscriptions",
+    "stats": {
+      "enrolledCourses": "Enrolled Courses",
+      "completedLessons": "Completed Lessons",
+      "hoursWatched": "Hours Watched",
+      "averageScore": "Average Score"
+    }
+  },
+  "Navigation": {
+    "overview": "Overview",
+    "myCourses": "My Courses",
+    "myProgress": "My Progress",
+    "students": "Students",
+    "children": "Children",
+    "payments": "Payments",
+    "earnings": "Earnings",
+    "users": "Users",
+    "analytics": "Analytics",
+    "system": "System Settings",
+    "settings": "Settings",
+    "profile": "Profile",
+    "courses": "Course Management"
+  },
+  "Courses": {
+    "title": "Courses",
+    "form": {
+      "title": "Course Title",
+      "shortDescription": "Short Description",
+      "level": "Level",
+      "accessType": "Access Type",
+      "price": "Price"
+    },
+    "levels": {
+      "PRIMARY": "Primary",
+      "MIDDLE": "Middle",
+      "HIGH_BAC": "High School & BAC",
+      "SKILLS": "Skills"
+    },
+    "access": {
+      "FREE": "Free",
+      "SUBSCRIPTION": "Subscription",
+      "PER_COURSE": "Per Course"
+    }
+  },
+  "Locale": {
+    "ar": "العربية",
+    "fr": "Français",
+    "en": "English"
+  }
+}

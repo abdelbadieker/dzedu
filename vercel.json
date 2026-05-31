@@ -1,0 +1,12 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "git": {
+    "deploymentEnabled": {
+      "main": true,
+      "develop": true
+    }
+  },
+  "installCommand": "npm ci --include-workspace-root",
+  "buildCommand": "npx prisma generate --schema=packages/database/prisma/schema.prisma && npm run build -w apps/web",
+  "outputDirectory": "apps/web/.next"
+}

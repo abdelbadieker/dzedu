@@ -1,0 +1,93 @@
+{
+  "Common": {
+    "loading": "جاري التحميل...",
+    "error": "حدث خطأ",
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "delete": "حذف",
+    "edit": "تعديل",
+    "create": "إنشاء",
+    "search": "بحث",
+    "noResults": "لا توجد نتائج",
+    "back": "رجوع",
+    "next": "التالي",
+    "submit": "إرسال",
+    "confirm": "تأكيد",
+    "close": "إغلاق"
+  },
+  "Auth": {
+    "login": "تسجيل الدخول",
+    "register": "إنشاء حساب",
+    "logout": "تسجيل الخروج",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "confirmPassword": "تأكيد كلمة المرور",
+    "forgotPassword": "نسيت كلمة المرور؟",
+    "loginGoogle": "المتابعة عبر Google",
+    "noAccount": "ليس لديك حساب؟",
+    "hasAccount": "هل لديك حساب بالفعل؟",
+    "verifyOtp": "التحقق من OTP",
+    "otpSent": "تم إرسال رمز التحقق إلى {email}"
+  },
+  "Dashboard": {
+    "title": "لوحة التحكم",
+    "welcome": "مرحبًا بعودتك، {name}",
+    "myCourses": "دوراتي",
+    "myProgress": "تقدمي",
+    "settings": "الإعدادات",
+    "profile": "الملف الشخصي",
+    "quickActions": "إجراءات سريعة",
+    "recentActivity": "النشاط الأخير",
+    "totalStudents": "إجمالي الطلاب",
+    "totalCourses": "إجمالي الدورات",
+    "totalRevenue": "إجمالي الإيرادات",
+    "activeSubscriptions": "الاشتراكات النشطة",
+    "stats": {
+      "enrolledCourses": "الدورات المسجلة",
+      "completedLessons": "الدروس المكتملة",
+      "hoursWatched": "ساعات المشاهدة",
+      "averageScore": "المتوسط العام"
+    }
+  },
+  "Navigation": {
+    "overview": "نظرة عامة",
+    "myCourses": "دوراتي",
+    "myProgress": "تقدمي",
+    "students": "الطلاب",
+    "children": "الأبناء",
+    "payments": "المدفوعات",
+    "earnings": "الأرباح",
+    "users": "المستخدمون",
+    "analytics": "التحليلات",
+    "system": "إعدادات النظام",
+    "settings": "الإعدادات",
+    "profile": "الملف الشخصي",
+    "courses": "إدارة الدورات"
+  },
+  "Courses": {
+    "title": "الدورات",
+    "form": {
+      "title": "عنوان الدورة",
+      "shortDescription": "وصف قصير",
+      "level": "المستوى",
+      "accessType": "نوع الوصول",
+      "price": "السعر"
+    },
+    "levels": {
+      "PRIMARY": "ابتدائي",
+      "MIDDLE": "متوسط",
+      "HIGH_BAC": "ثانوي & بكالوريا",
+      "SKILLS": "مهارات"
+    },
+    "access": {
+      "FREE": "مجاني",
+      "SUBSCRIPTION": "اشتراك",
+      "PER_COURSE": "لكل دورة"
+    }
+  },
+  "Locale": {
+    "ar": "العربية",
+    "fr": "Français",
+    "en": "English"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "dz-edu",
+  "version": "0.1.0",
+  "private": true,
+  "description": "DzEdu - Multi-Tenant EdTech SaaS Platform for Algeria",
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "clean": "turbo clean",
+    "db:generate": "npm run db:generate -w packages/database",
+    "db:push": "npm run db:push -w packages/database",
+    "db:migrate": "npm run db:migrate -w packages/database",
+    "db:migrate:prod": "npm run db:migrate:prod -w packages/database",
+    "db:studio": "npm run db:studio -w packages/database",
+    "start:web": "node apps/web/server.js",
+    "start:api": "node apps/api/dist/main",
+    "validate:env": "node scripts/validate-env.mjs"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "tooling/*"
+  ],
+  "devDependencies": {
+    "prettier": "^3.4.2",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "turbo": "^2.4.4",
+    "typescript": "^5.7.3"
+  },
+  "engines": {
+    "node": ">=20.18.0",
+    "npm": ">=10.0.0"
+  },
+  "packageManager": "npm@10.8.2"
+}
